@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Global connection</title>
+  <desc id="desc">An orange globe with ivory continents, a white wireframe grid, and an orbiting satellite.</desc>
+  <defs>
+    <radialGradient id="globe-fill" cx="32%" cy="26%" r="78%">
+      <stop offset="0" stop-color="#e8e8e8"/>
+      <stop offset="0.46" stop-color="#bdbdbd"/>
+      <stop offset="0.8" stop-color="#8f8f8f"/>
+      <stop offset="1" stop-color="#5c5c5c"/>
+    </radialGradient>
+    <radialGradient id="edge-shade" cx="35%" cy="30%" r="72%">
+      <stop offset="0.52" stop-color="#0f0f0f" stop-opacity="0"/>
+      <stop offset="0.82" stop-color="#0f0f0f" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#0f0f0f" stop-opacity="0.44"/>
+    </radialGradient>
+    <linearGradient id="shadow-fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset="0.42" stop-color="white" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="light-fade" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="white" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="white" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="white" stop-opacity="0.8"/>
+    </linearGradient>
+    <pattern id="light-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="2" fill="#ffffff"/>
+    </pattern>
+    <pattern id="shadow-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="4.2" fill="#1c1c1c"/>
+    </pattern>
+    <pattern id="land-print" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#ffffff"/>
+      <circle cx="3" cy="3" r="1.35" fill="#7d7d7d" opacity="0.6"/>
+    </pattern>
+    <mask id="shadow-dot-mask">
+      <rect width="640" height="640" fill="url(#shadow-fade)"/>
+    </mask>
+    <mask id="light-dot-mask">
+      <rect width="640" height="640" fill="url(#light-fade)"/>
+    </mask>
+    <clipPath id="globe-clip">
+      <circle cx="320" cy="320" r="224"/>
+    </clipPath>
+  </defs>
+
+  <ellipse cx="320" cy="320" rx="286" ry="104" transform="rotate(-24 320 320)" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.5"/>
+
+  <circle cx="320" cy="320" r="224" fill="url(#globe-fill)"/>
+  <circle cx="320" cy="320" r="224" fill="url(#light-dots)" mask="url(#light-dot-mask)" opacity="0.5"/>
+  <circle cx="320" cy="320" r="224" fill="url(#shadow-dots)" mask="url(#shadow-dot-mask)" opacity="0.62"/>
+  <circle cx="320" cy="320" r="224" fill="url(#edge-shade)"/>
+  <g clip-path="url(#globe-clip)" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.82">
+    <ellipse cx="320" cy="320" rx="72" ry="224"/>
+    <ellipse cx="320" cy="320" rx="144" ry="224"/>
+    <path d="M320 94V546"/>
+    <path d="M94 320H546"/>
+    <path d="M100 267C190 318 450 318 540 267"/>
+    <path d="M118 211C214 261 426 261 522 211"/>
+    <path d="M159 151C242 193 398 193 481 151"/>
+    <path d="M100 373C190 322 450 322 540 373"/>
+    <path d="M118 429C214 379 426 379 522 429"/>
+    <path d="M159 489C242 447 398 447 481 489"/>
+  </g>
+
+  <g fill="url(#land-print)">
+    <path d="M157 212L190 198L226 209L244 237L270 260L267 286L247 307L253 338L231 385L211 362L190 345L164 343L151 315L143 277Z"/>
+    <path d="M337 167L365 151L400 157L419 177L415 207L445 232L454 257L435 279L410 290L401 326L389 356L369 397L350 370L347 335L354 306L331 283L311 248L316 210Z"/>
+    <path d="M278 173L291 165L302 172L296 185L282 187Z"/>
+    <path d="M442 339L454 333L463 342L457 355L444 354Z"/>
+  </g>
+
+  <circle cx="320" cy="320" r="224" fill="none" stroke="#ffffff" stroke-width="4"/>
+  <path d="M62 393C116 470 296 431 460 318C538 264 580 210 579 166" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="552" cy="157" r="11" fill="#ffffff"/>
+  <circle cx="552" cy="157" r="17" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.3"/>
+</svg>

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter Tight", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root, [data-theme="light"] {
+  --bg: #f3ecde;
+  --bg2: #ebe2cf;
+  --fg: #16120e;
+  --muted: #6d6456;
+  --line: rgba(22, 18, 14, 0.16);
+  --card: #f8f3e8;
+  --accent: #e0492b;
+  --accent-fg: #fff7ea;
+}
+[data-theme="night"] {
+  --bg: #0b0d17;
+  --bg2: #11142200;
+  --fg: #f1ead9;
+  --muted: #8d8a9b;
+  --line: rgba(241, 234, 217, 0.16);
+  --card: #141830;
+  --accent: #ffb454;
+  --accent-fg: #0b0d17;
+}
+
+html { background: var(--bg); }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg);
+  transition: background-color 0.7s ease, color 0.7s ease;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+::selection { background: var(--accent); color: var(--accent-fg); }
+a, button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.font-display { font-family: var(--font-display); font-variation-settings: "opsz" 144; }
+.mono { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; }
+.wrap { width: min(1280px, 100% - 2.5rem); margin-inline: auto; }
+.rule { border-top: 1px solid var(--line); }
+.chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.25rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.95rem 1.5rem; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid var(--fg); color: var(--fg); background: transparent;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.btn:hover { background: var(--fg); color: var(--bg); }
+.btn-solid { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.btn-solid:hover { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+
+.split-line { display: block; overflow: hidden; }
+.split-line > span { display: inline-block; will-change: transform; }
+
+@keyframes ticker { to { transform: translateX(-50%); } }
+@keyframes twinkle { 0%,100% { opacity: .25; } 50% { opacity: 1; } }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+@keyframes drop { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+.twinkle { animation: twinkle 3s ease-in-out infinite; }
+.bob { animation: bob 6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}
+
+/* ---- Intro HUD (matches the reference's blue, wireframe, Plex Mono look) ---- */
+:root { --ink: #2260d9; }
+.hud-font { font-family: "IBM Plex Mono", Menlo, monospace; font-weight: 300; }
+.anton { font-family: Anton, Impact, "Arial Narrow", sans-serif; font-synthesis: none; }
+.corner { position: absolute; width: 10px; height: 10px; opacity: .48; border-color: currentColor; }
+.hud-pill {
+  display: flex; align-items: center; gap: 11px; min-height: 56px; padding: 13px 26px;
+  background: transparent; border: 1px solid #ffffff8c; border-radius: 40px; color: #fff;
+  font-size: 13px; letter-spacing: .2em; transition: border-color .2s, background .2s, transform .2s;
+}
+.hud-pill:hover { border-color: #fff; background: #ffffff0c; transform: translateY(-2px); }
+@media (max-width: 600px) { .hud-pill { font-size: 11px; letter-spacing: .12em; min-height: 44px; padding: 8px 14px; } }
