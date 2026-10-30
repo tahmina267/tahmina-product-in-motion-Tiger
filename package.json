@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && cp -R replica/. dist/",
+    "build": "tsc -b && vite build && cp -R intro/. dist/",
     "lint": "oxlint",
     "preview": "vite preview"
   },

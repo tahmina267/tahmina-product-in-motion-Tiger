@@ -77,7 +77,7 @@ a, button { cursor: pointer; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
 }
 
-/* ---- Intro HUD (matches the reference's blue, wireframe, Plex Mono look) ---- */
+/* ---- Intro HUD (blue, wireframe, Plex Mono look) ---- */
 :root { --ink: #2260d9; }
 .hud-font { font-family: "IBM Plex Mono", Menlo, monospace; font-weight: 300; }
 .anton { font-family: Anton, Impact, "Arial Narrow", sans-serif; font-synthesis: none; }

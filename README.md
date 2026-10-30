@@ -7,7 +7,7 @@ A scroll-driven 3D portfolio for an end-to-end product engineer (product, UI/UX,
 
 | Route | What it is |
 |---|---|
-| `/` | Cinematic 3D intro: a wireframe cheetah runs through scroll-driven scenes (`replica/`) |
+| `/` | Cinematic 3D intro: a wireframe cheetah runs through scroll-driven scenes (`intro/`) |
 | `/portfolio.html` | Full portfolio site: Work, About, Process, Playground, Contact (`src/`) |
 
 ## Why it's different
@@ -20,7 +20,7 @@ A scroll-driven 3D portfolio for an end-to-end product engineer (product, UI/UX,
 
 ## What was built
 
-### `/` — 3D intro (`replica/`)
+### `/` — 3D intro (`intro/`)
 Plain Three.js, no build step.
 
 - Loader, scroll-scrubbed camera rig, road, 3D cards, buttons, glass and ASCII scenes
@@ -51,12 +51,11 @@ React 19, TypeScript, Vite, Tailwind CSS 4, GSAP + ScrollTrigger, Framer Motion,
 ```bash
 npm install
 npm run dev      # portfolio at http://localhost:5173/portfolio.html
-npm run build    # builds the portfolio, then copies replica/ over dist/
+npm run build    # builds the portfolio, then copies intro/ over dist/
 ```
 
 Deploy: `npx vercel deploy --prod` (headers for the brotli files are in `vercel.json`).
 
 ## Notes
 
-- `replica/` contains the scene code and assets of the Product-in-Motion page at https://nyxa5qonhj35q.kimi.page, with its analytics script removed.
 - Contact and case-study links currently point to the full portfolio. Replace them in `src/lib/content.ts`.

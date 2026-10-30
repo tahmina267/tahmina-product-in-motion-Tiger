@@ -8,7 +8,7 @@ const LINE = new THREE.LineBasicMaterial({ color: '#ffffff' })
 const DIM = new THREE.LineBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.35 })
 
 type P3 = [number, number, number]
-/** A wireframe capsule (or ellipsoid when len = 0) drawn as clean quad edges, in the reference's white-line style. */
+/** A wireframe capsule (or ellipsoid when len = 0) drawn as clean quad edges,. */
 function Wire({ r, len = 0, pos = [0, 0, 0], rot = [0, 0, 0], scale = [1, 1, 1] }: { r: number; len?: number; pos?: P3; rot?: P3; scale?: P3 }) {
   const g = useMemo(() => new THREE.EdgesGeometry(len ? new THREE.CapsuleGeometry(r, len, 5, 14) : new THREE.SphereGeometry(r, 14, 10), 8), [r, len])
   return <lineSegments geometry={g} material={LINE} position={pos} rotation={rot} scale={scale} />
